@@ -38,28 +38,29 @@ class MyCloset:
     
         """
     
-    """
-    If user picks an outfit for the day:
-    Function 
-        Ask the user what matters most,
-        color/weather or casual/formal? 
-        (this will indicate the rating order below) 
+     def rank_choices(criteria):
+        """This is going to be the main ranking function for 
+            each piece of clothing.
         
-        Using the users needs:
-            rank the outfit items based on 
-            the users priority
-            for tops/bottoms and shoes
-    
-    """
-    
-    """
-    If user picks an outfit for the day:
-    Function 
-        Using the ranking above,
-         indicate the #1 tops, shoes and bottoms
-         to tell the user the 
-         highly rated outfit
-    """
+        Args:
+            criteria (list): list of strings with the answers to questions
+                to serve as the sorting criteria
+        
+        Returns:
+            A sorted and ranked list of closet items based on the 
+            current criteria.
+        
+        """
+    def highest_rated(ranked):
+        """Picks out the highest ranked outfit from the list.
+        
+        Args:
+            ranked (list): the returned ranked list from rank_choices
+        
+        Returns:
+            A string representation of the top ranked outfit broken
+            down into its compenents (top, bottoms, etc.).
+        """
     
     """
     If user picks based on friends style
