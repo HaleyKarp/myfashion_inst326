@@ -93,6 +93,12 @@ class MyCloset:
     This function will add clothing to the closet
         
      """
+     
+    def sub_clothing():
+        """
+        This function will get rid of old/irrelevant clothes
+        
+        """
     
     def save_outfit():
         """
@@ -109,6 +115,12 @@ class MyCloset:
             4. add new clothes to closet
     
         """
+    def display():
+        """
+        This will be at the end to show the user results when they finalized their decsion of which clothes they chose. 
+        
+        """
+    
     
     
     if __name__ == “__main__”:
