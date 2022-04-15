@@ -77,31 +77,28 @@ class MyCloset:
     
     """
     
-    """
-    If user packs for a trip
-    Function
-        Ask user how many days they are
-        staying? 
-        depending on number of days, 
-        give outfits accordingly to wear 
-        each day 
+    def packing():
+        """
+        If user packs for a trip
+        Function
+            Ask user how many days they are
+            staying? 
+            depending on number of days, 
+            give outfits accordingly to wear 
+            each day 
 
     """
+    def add_clothing():
+     """
+    This function will add clothing to the closet
+        
+     """
     
-    """
-    Function
-    If user needs to add clothing items to closet
-    
-    """
-    
-    """
-    Function that saves the created outfits to a new textfile? 
-    Just an idea
-    """
-    
-    """
-    
-    """
+    def save_outfit():
+        """
+        This function will save outfit to the file.
+        """
+  
     
     def ask_user():  
         """
