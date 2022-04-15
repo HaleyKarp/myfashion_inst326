@@ -62,20 +62,21 @@ class MyCloset:
             down into its compenents (top, bottoms, etc.).
         """
     
-    """
-    If user picks based on friends style
-        Ask user to indicate what the friend 
-        is most likely to wear for 
-        tops:
-            short sleeve/long, etc
-        bottoms: knee high, short, long pants, etc
-        shoes: heels, sandals, flip flops 
-    
-    Use the criteria to return an outfit that
-    has all three of those implemented 
-    (need to match certain colors) 
-    
-    """
+    def clothing_style(short,sleeve_long,knee high,short,long pants):
+        """
+        If user picks based on friends style
+            Ask user to indicate what the friend 
+            is most likely to wear for 
+            tops:
+                short sleeve/long, etc
+            bottoms: knee high, short, long pants, etc
+            shoes: heels, sandals, flip flops 
+        
+        Use the criteria to return an outfit that
+        has all three of those implemented 
+        (need to match certain colors) 
+        
+        """
     
     def packing():
         """
