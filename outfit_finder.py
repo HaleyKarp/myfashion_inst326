@@ -101,7 +101,6 @@ class MyCloset:
         
         """
     
-<<<<<<< HEAD
     """
     Function
     If user needs to add clothing items to closet
@@ -113,13 +112,6 @@ class MyCloset:
     Just an idea
     """
     
-=======
-    def save_outfit():
-        """
-        This function will save outfit to the file.
-        """
-  
->>>>>>> ad2578261940a399b825c29d2d1456635644ba3f
     
     def ask_user():  
         """
