@@ -38,8 +38,8 @@ class MyCloset:
     
         """
     
-     def rank_choices(criteria):
-        """This is going to be the main ranking function for 
+    def rank_choices(criteria):
+            """This is going to be the main ranking function for 
             each piece of clothing.
         
         Args:
@@ -99,9 +99,6 @@ class MyCloset:
     Just an idea
     """
     
-    """
-    
-    """
     
     def ask_user():  
         """
