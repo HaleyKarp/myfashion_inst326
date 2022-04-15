@@ -62,20 +62,21 @@ class MyCloset:
             down into its compenents (top, bottoms, etc.).
         """
     
-    """
-    If user picks based on friends style
-        Ask user to indicate what the friend 
-        is most likely to wear for 
-        tops:
-            short sleeve/long, etc
-        bottoms: knee high, short, long pants, etc
-        shoes: heels, sandals, flip flops 
-    
-    Use the criteria to return an outfit that
-    has all three of those implemented 
-    (need to match certain colors) 
-    
-    """
+    def clothing_style(short,sleeve_long,knee high,short,long pants):
+        """
+        If user picks based on friends style
+            Ask user to indicate what the friend 
+            is most likely to wear for 
+            tops:
+                short sleeve/long, etc
+            bottoms: knee high, short, long pants, etc
+            shoes: heels, sandals, flip flops 
+        
+        Use the criteria to return an outfit that
+        has all three of those implemented 
+        (need to match certain colors) 
+        
+        """
     
     def packing():
         """
@@ -93,6 +94,12 @@ class MyCloset:
     This function will add clothing to the closet
         
      """
+     
+    def sub_clothing():
+        """
+        This function will get rid of old/irrelevant clothes
+        
+        """
     
 <<<<<<< HEAD
     """
@@ -123,6 +130,12 @@ class MyCloset:
             4. add new clothes to closet
     
         """
+    def display():
+        """
+        This will be at the end to show the user results when they finalized their decsion of which clothes they chose. 
+        
+        """
+    
     
     
     if __name__ == “__main__”:
