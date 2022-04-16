@@ -59,7 +59,7 @@ class MyCloset:
             down into its compenents (top, bottoms, etc.).
         """
     
-    def clothing_style(short,sleeve_long,knee_high,long_pants):
+    def clothing_style():
         """
         If user picks based on friends style
             Ask user to indicate what the friend 
@@ -84,6 +84,13 @@ class MyCloset:
             depending on number of days, 
             give outfits accordingly to wear 
             each day 
+        
+        Args:
+            days (int): number of days they are going on the trip
+            outfit (list): outfit list
+        
+        Returns:
+            list: outfit list
 
         """
     def add_clothing():
@@ -125,6 +132,7 @@ class MyCloset:
             2. based on friends style 
             3. Pack for a trip
             4. add new clothes to closet
+            
     
         """
     def display():
