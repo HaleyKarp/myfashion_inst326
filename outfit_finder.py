@@ -117,15 +117,18 @@ class MyCloset:
         
         """
     
-    
     def my_outfits(): 
         """
         Function that outputs outfits to a textfile
         
         Args:
-            my_outfits(textfile): new textfile where the columns chosen will be
+            new_outfit (list): top, bottom and shoes that will 
+            be created as a list under "outfit" in new textfile 
+        
+        Returns:
+             my_outfits(textfile): new textfile where the columns chosen will be
             saved to 
-            
+
         """
     
     
