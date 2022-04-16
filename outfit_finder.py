@@ -12,7 +12,8 @@ class MyCloset:
         Args:
             filepath (path): access to closet file 
 
-        
+        Returns:
+            The file path to access data from the CSV
         """
 
     def day_outfit(): 
@@ -64,15 +65,18 @@ class MyCloset:
         If user picks based on friends style
             Ask user to indicate what the friend 
             is most likely to wear for 
-            tops:
-                short sleeve/long, etc
-            bottoms: knee high, short, long pants, etc
-            shoes: heels, sandals, flip flops 
         
-        Use the criteria to return an outfit that
-        has all three of those implemented 
-        (need to match certain colors) 
+        Args:
+            friend_tops (list): different types of tops the friends where
+            friend_bottoms (list): list of attributes of bottoms the friends
+            might where
+            friend_shoes (list): list of shoes the friends where 
+            match_friend (list): list of clothing items from your closet
+            that match friend based on similarities 
         
+        Return:
+            match_friend (list): list of clothing items from your closet
+
         """
     
     def packing():
