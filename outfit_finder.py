@@ -139,28 +139,53 @@ class MyCloset:
             2. based on friends style 
             3. Pack for a trip
             4. add new clothes to closet
+        
+        Args:
+            user_choice (int): indicates what the user wants to do first 
+        
+        Returns:
+            user_choice (int): indicates what the user wants to do first 
             
     
         """
     def display():
         """
-        This will be at the end to show the user results when they finalized their decsion of which clothes they chose. 
+            This function will display all "outfits" made from the 
+            textfile that the user can output to
         
+        Args:
+            my_outfits(textfile): new textfile where the columns chosen will be
+            saved to 
+        
+        Return: 
+            display the outfits made by the user 
+
         """
-    
-    
-    
-    #if __name__ == “__main__”: 
-        """
-        This is actually our main function that should call everything 
         
-        #ask_user() should get called first 
-        
-            If user picks 1 run: 
+if __name__ == "__main__":
+    MyCloset.display()
+    MyCloset.ask_user()
+    MyCloset.my_outfits()
+    MyCloset.add_clothing()
+    MyCloset.packing()
+    MyCloset.clothing_style()
+    MyCloset.highest_rated()
+    MyCloset.rank_choices()
+    MyCloset.day_outfit()
+
+
+"""
+This is actually our main function that should call everything 
+        (mini notes below abt ideas for this)
+        ask_user() should get called first 
+        If user picks 1 run: 
                 - day_oufit()
                 - ranking function
                 - funtion that displays the number 1 outfit of each item 
-            
-            if user picks 2:
-                
-        """
+    if user picks 2...
+"""
+
+
+
+
+        
