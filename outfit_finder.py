@@ -62,7 +62,7 @@ class MyCloset:
             down into its compenents (top, bottoms, etc.).
         """
     
-    def clothing_style(short,sleeve_long,knee high,short,long pants):
+    def clothing_style(short,sleeve_long,knee_high,long_pants):
         """
         If user picks based on friends style
             Ask user to indicate what the friend 
@@ -130,7 +130,7 @@ class MyCloset:
     
     
     
-    if __name__ == “__main__”:
+    #if __name__ == “__main__”: 
         """
         This is actually our main function that should call everything 
         
