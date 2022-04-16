@@ -11,10 +11,7 @@ class MyCloset:
         
         Args:
             filepath (path): access to closet file 
-        
-        #with open to open closet file 
-        #display file contents to user with columns 
-        
+
         
         """
 
@@ -88,29 +85,37 @@ class MyCloset:
             give outfits accordingly to wear 
             each day 
 
-    """
+        """
     def add_clothing():
-     """
-    This function will add clothing to the closet
-        
-     """
-     
-    def sub_clothing():
         """
-        This function will get rid of old/irrelevant clothes
+        This function will add clothing to the closet
+        
+        Args: 
+        filepath (file): path to the csv file 
+        add_clothing_name (str): bottoms/tops or shoes
+        add_clothing_color(str): clothing color
+        add_clothing_length (str): long, short
+        add_clothing material (str): jean, cotton, khaki, spandex
+        add_clothing_gender (str): male or female
+        add_clothing_weather (str): warm or cold
+        
+        Raises
+            ValueError if user doesn't input the correct data type
+            for the clothing item 
+        
         
         """
     
-    """
-    Function
-    If user needs to add clothing items to closet
     
-    """
-    
-    """
-    Function that saves the created outfits to a new textfile? 
-    Just an idea
-    """
+    def my_outfits(): 
+        """
+        Function that outputs outfits to a textfile
+        
+        Args:
+            my_outfits(textfile): new textfile where the columns chosen will be
+            saved to 
+            
+        """
     
     
     def ask_user():  
