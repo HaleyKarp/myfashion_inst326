@@ -1,9 +1,11 @@
+import pandas as pd
+
 class MyCloset:
     """ Help users pick an outfit based on 
     criteria given by the user
     """
     
-    def open_closet(filepath): 
+    def open_closet(): 
         """
         Function that reads in users closet file
         Display current closet to the users 
@@ -15,6 +17,9 @@ class MyCloset:
         Returns:
             The file path to access data from the CSV
         """
+        
+        closet_df = pd.read_csv("fashion_project.csv")
+        print(closet_df)
 
     def day_outfit(): 
         """
@@ -36,7 +41,7 @@ class MyCloset:
     
         """
     
-    def rank_choices(criteria):
+    def rank_choices():
             """This is going to be the main ranking function for 
             each piece of clothing.
         
@@ -49,7 +54,7 @@ class MyCloset:
             current criteria.
         
         """
-    def highest_rated(ranked):
+    def highest_rated():
         """Picks out the highest ranked outfit from the list.
         
         Args:
@@ -59,6 +64,7 @@ class MyCloset:
             A string representation of the top ranked outfit broken
             down into its compenents (top, bottoms, etc.).
         """
+        
     
     def clothing_style():
         """
@@ -161,7 +167,8 @@ class MyCloset:
             display the outfits made by the user 
 
         """
-        
+ 
+"""       
 if __name__ == "__main__":
     MyCloset.display()
     MyCloset.ask_user()
@@ -172,7 +179,7 @@ if __name__ == "__main__":
     MyCloset.highest_rated()
     MyCloset.rank_choices()
     MyCloset.day_outfit()
-
+"""
 
 """
 This is actually our main function that should call everything 
