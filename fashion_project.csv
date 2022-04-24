@@ -1,0 +1,22 @@
+category,length,type,material,gender,occasion ,weather,color
+bottoms,long,pants,jean,female,casual,cold,blue
+bottoms,long,pants,cotton,female,casual,cold,white
+bottoms,long,leggings,spandex,female,casual,cold,black
+bottoms,long,pants,jean,male,casual,cold,blue
+bottoms,long,pants,cotton,male,casual,cold,black
+bottoms,long,pants,khaki,male,casual,cold,tan
+bottoms,short,shorts,jean,both ,casual,warm,blue
+bottoms,short,shorts,khaki,male,both ,warm,tan
+bottoms,long ,skirt ,cotton,female,casual,warm,blue
+tops,short,t-shirt,cotton,both ,casual,warm,gray 
+tops ,short ,tank ,cotton,female,casual,warm ,pink 
+tops,short,tank ,cotton,female,formal,warm,purple
+tops ,short,t-shirt,cotton,male,formal,warm,black
+tops,short,t-shirt,cotton,male,casual,warm,blue
+tops ,long,long-sleeve,cotton,both,both ,cold,white
+tops,long,sweater,cotton,female,formal,cold,tan
+tops,long,sweater ,cotton,male,formal,cold,blue
+shoes,,sneakers,,both,casual,both,white
+shoes,,sneakers,,both,casual,both,black
+shoes,,heels,,female,formal,warm,silver
+shoes,,oxfords,,male,formal,both,tan
