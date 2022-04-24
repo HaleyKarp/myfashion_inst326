@@ -145,12 +145,16 @@ class MyCloset:
             2. based on friends style 
             3. Pack for a trip
             4. add new clothes to closet
+        """
+        print("What would you like to do?")
+        closet_clothes = input('1. pick an outfit for the day\n2. based on friends style\n 3. Pack for a trip\n4. add new clothes to closet/n')
         
         Args:
             user_choice (int): indicates what the user wants to do first 
         
         Returns:
             user_choice (int): indicates what the user wants to do first 
+        
             
     
         """
