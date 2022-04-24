@@ -1,0 +1,31 @@
+item_num,category,length,type,material,gender,occasion ,weather,color
+1,bottoms,long,pants,jean,female,casual,cold,blue
+2,bottoms,long,pants,cotton,female,casual,cold,white
+3,bottoms,long,leggings,spandex,female,casual,cold,black
+4,bottoms,long,pants,jean,male,casual,cold,blue
+5,bottoms,long,pants,cotton,male,casual,cold,black
+6,bottoms,long,pants,khaki,male,casual,cold,tan
+7,bottoms,short,shorts,jean,both ,casual,warm,blue
+8,bottoms,short,shorts,khaki,male,both ,warm,tan
+9,bottoms,long ,skirt ,cotton,female,casual,warm,blue
+10,tops,short,t-shirt,cotton,both ,casual,warm,gray 
+11,tops ,short ,tank ,cotton,female,casual,warm ,pink 
+12,tops,short,tank ,cotton,female,formal,warm,purple
+13,tops ,short,t-shirt,cotton,male,formal,warm,black
+14,tops,short,t-shirt,cotton,male,casual,warm,blue
+15,tops ,long,long-sleeve,cotton,both,both ,cold,white
+16,tops,long,sweater,cotton,female,formal,cold,tan
+17,tops,long,sweater ,cotton,male,formal,cold,blue
+18,shoes,,sneakers,,both,casual,both,white
+19,shoes,,sneakers,,both,casual,both,black
+20,shoes,,heels,,female,formal,warm,silver
+21,shoes,,oxfords,,male,formal,both,tan
+22,,,,,,,,
+23,,,,,,,,
+24,,,,,,,,
+25,,,,,,,,
+26,,,,,,,,
+27,,,,,,,,
+28,,,,,,,,
+29,,,,,,,,
+30,,,,,,,,
