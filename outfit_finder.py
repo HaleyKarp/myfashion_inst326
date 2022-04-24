@@ -18,8 +18,8 @@ class MyCloset:
             The file path to access data from the CSV
         """
         
-        closet_df = pd.read_csv("fashion_project.csv")
-        print(closet_df)
+        closet_df = pd.read_csv ("fashion_project.csv")
+        print (closet_df)
 
     def day_outfit(): 
         """
@@ -167,9 +167,11 @@ class MyCloset:
             display the outfits made by the user 
 
         """
- 
-"""       
+      
 if __name__ == "__main__":
+    MyCloset.open_closet()
+
+"""
     MyCloset.display()
     MyCloset.ask_user()
     MyCloset.my_outfits()
@@ -180,6 +182,7 @@ if __name__ == "__main__":
     MyCloset.rank_choices()
     MyCloset.day_outfit()
 """
+
 
 """
 This is actually our main function that should call everything 
