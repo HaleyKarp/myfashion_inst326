@@ -20,6 +20,32 @@ class MyCloset:
         
         closet_df = pd.read_csv ("fashion_project.csv")
         print (closet_df)
+    
+    def ask_user(user_choice):  
+        """
+        Function that asks user what they want to do
+            1. pick an outfit for the day
+            2. based on friends style 
+            3. Pack for a trip
+            4. add new clothes to closet
+        
+        Args:
+            user_choice (int): indicates what the user wants to do first 
+        
+        Returns:
+            user_choice (int): indicates what the user wants to do first 
+        
+        """
+        print("What would you like to do?")
+        print("1. pick an outfit for the day\n2. based on friends style\n3. pack for a trip\n4. add new clothes to closet")
+        user_choice = int(input("I would like to: "))
+          
+        if (user_choice != 1 and user_choice !=2 and 
+            user_choice != 3 and user_choice !=4):
+            raise ValueError ("This is not a valid answer choice")
+        else:
+            return user_choice
+        
 
     def day_outfit(): 
         """
@@ -137,27 +163,6 @@ class MyCloset:
 
         """
     
-    
-    def ask_user():  
-        """
-        Function that asks user what they want to do
-            1. pick an outfit for the day
-            2. based on friends style 
-            3. Pack for a trip
-            4. add new clothes to closet
-        
-        Args:
-            user_choice (int): indicates what the user wants to do first 
-        
-        Returns:
-            user_choice (int): indicates what the user wants to do first 
-        
-        """
-        print("What would you like to do?")
-        closet_clothes = input('1. pick an outfit for the day\n2. based on friends style\n 3. Pack for a trip\n4. add new clothes to closet/n')
-        
-            
-    
         
     def display():
         """
@@ -175,6 +180,16 @@ class MyCloset:
       
 if __name__ == "__main__":
     MyCloset.open_closet()
+    if MyCloset.ask_user(user_choice= 1):
+        MyCloset.day_outfit()
+    elif MyCloset.ask_user(user_choice = 2):
+        MyCloset.clothing_style()
+    elif MyCloset.ask_user(user_choice = 3):
+        MyCloset.packing()
+    elif MyCloset.ask_user(user_choice = 4):
+        MyCloset.add_clothing()
+        
+        
 
 """
     MyCloset.display()
