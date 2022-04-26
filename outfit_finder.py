@@ -19,7 +19,7 @@ class MyCloset:
         """
         
         closet_df = pd.read_csv ("fashion_project.csv")
-        print (closet_df)
+        return closet_df
     
     def ask_user(user_choice):  
         """
@@ -66,6 +66,7 @@ class MyCloset:
         3. What is the weather supposed to be like?
     
         """
+        print(MyCloset.closet_df)
     
     def rank_choices():
             """This is going to be the main ranking function for 
