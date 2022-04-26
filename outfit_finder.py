@@ -9,6 +9,8 @@ class MyCloset:
     """
     
     closet_df = pd.read_csv ("fashion_project.csv")
+    closet_df = pd.DataFrame((closet_df), 
+                columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
     print(closet_df)
     
     def __init__(self):
@@ -74,7 +76,14 @@ class MyCloset:
         3. What is the weather supposed to be like?
     
         """
-        print(MyCloset.closet_df)
+        #print(MyCloset.closet_df)
+        print("Would you like to find an outfit based on: \n1.Casual vs Formal?\n2.Color\n3.Weather ")
+        day_answer = int(input("Insert number that corresponds to answer choice: "))
+        if day_answer == 1:
+            casform = input("casual or formal?")
+            if casform == "casual":
+                print(MyCloset.closet_df["occasion"] == "casual")
+                        
     
     def rank_choices():
             """This is going to be the main ranking function for 
