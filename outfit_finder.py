@@ -1,9 +1,15 @@
+from typing_extensions import Self
 import pandas as pd
 
 class MyCloset:
     """ Help users pick an outfit based on 
     criteria given by the user
     """
+    
+    def __init__(self):
+        """ what should go here?
+        """
+    
     
     def open_closet(): 
         """
@@ -17,9 +23,8 @@ class MyCloset:
         Returns:
             The file path to access data from the CSV
         """
-        
         closet_df = pd.read_csv ("fashion_project.csv")
-        return closet_df
+        print(closet_df)
     
     def ask_user(user_choice):  
         """
@@ -66,7 +71,7 @@ class MyCloset:
         3. What is the weather supposed to be like?
     
         """
-        print(MyCloset.closet_df)
+        print(closet_df)
     
     def rank_choices():
             """This is going to be the main ranking function for 
