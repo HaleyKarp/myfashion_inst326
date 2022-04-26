@@ -82,7 +82,22 @@ class MyCloset:
         if day_answer == 1:
             casform = input("casual or formal?")
             if casform == "casual":
-                print(MyCloset.closet_df["occasion"] == "casual")
+                print("These are all the clothing you have that are casual.")
+                casual = MyCloset.closet_df[MyCloset.closet_df["occasion"] == "casual"]
+                print(casual)
+                
+                gender = input("\nAre you a male or female? ")
+                if gender == "female":
+                    female_casual = casual[MyCloset.closet_df["gender"] == "female"]
+                    print(female_casual)
+                elif gender == "male":
+                    male_casual = casual[MyCloset.closet_df["gender"] == "male"]
+                    print(male_casual)
+                
+            elif casform == "formal":
+                print("These are all the clothing you have that are formal.")
+                print(MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"])
+                
                         
     
     def rank_choices():
