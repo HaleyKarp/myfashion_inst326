@@ -89,7 +89,22 @@ class MyCloset:
                 gender = input("\nAre you a male or female? ")
                 if gender == "female":
                     female_casual = casual[MyCloset.closet_df["gender"] == "female"]
-                    print(female_casual)
+                    female_bottoms = female_casual[MyCloset.closet_df["category"] == "bottoms"]
+                    bottom_color = input("Would you like the bottoms to be blue, white, or black?")
+                    if bottom_color == "blue":
+                        bottoms_color = female_bottoms[MyCloset.closet_df["color"] == "blue"]
+                        print(f"We reccomend one of these bottoms: \n{bottoms_color}")
+                        
+                    
+                    #female_tops = casual[MyCloset.closet_df["category"] == "tops"]
+                        #print(female_tops)
+                        #tops_color = female_tops[MyCloset.closet_df["color"] != "blue"]
+                        #print(f"The tops we reccomend to pair with it are: \n {tops_color}")
+                        #print(female_casual.loc[1])
+                    #female_tops = female_casual[MyCloset.closet_df["category"] == "tops"]
+                    #female_shoes = female_casual[MyCloset.closet_df["category"] == "shoes"]
+                    
+                    
                 elif gender == "male":
                     male_casual = casual[MyCloset.closet_df["gender"] == "male"]
                     print(male_casual)
@@ -99,7 +114,6 @@ class MyCloset:
                 print(MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"])
                 
                         
-    
     def rank_choices():
             """This is going to be the main ranking function for 
             each piece of clothing.
