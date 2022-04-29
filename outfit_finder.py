@@ -13,23 +13,13 @@ class MyCloset:
                 columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
     print(closet_df)
     
-    def __init__(self):
-        """ what should go here?
+    def __init__(self, closet_df):
+        """ 
+            Docstring
         """
+        self.closet = closet_df
+        criteria = []
     
-    
-    def open_closet(): 
-        """
-        Function that reads in users closet file
-        Display current closet to the users 
-        (maybe in table format) 
-        
-        Args:
-            filepath (path): access to closet file 
-
-        Returns:
-            The file path to access data from the CSV
-        """
     
     def ask_user(user_choice):  
         """
@@ -141,6 +131,9 @@ class MyCloset:
     
     def clothing_style():
         """
+        Sequence unpacking?!?!?!
+        Read it in as a tuple and unpack it!!!
+        Jiwon :) 
         If user picks based on friends style
             Ask user to indicate what the friend 
             is most likely to wear for 
@@ -160,6 +153,7 @@ class MyCloset:
     
     def packing():
         """
+        Andy
         If user packs for a trip
         Function
             Ask user how many days they are
@@ -178,6 +172,8 @@ class MyCloset:
         """
     def add_clothing():
         """
+        magic methods
+        Jiwon 
         This function will add clothing to the closet
         
         Args: 
@@ -198,7 +194,8 @@ class MyCloset:
     
     def my_outfits(): 
         """
-        Function that outputs outfits to a textfile
+        Haley 
+        Take users criteria and rank priority to determine outfits
         
         Args:
             new_outfit (list): top, bottom and shoes that will 
@@ -207,12 +204,24 @@ class MyCloset:
         Returns:
              my_outfits(textfile): new textfile where the columns chosen will be
             saved to 
+            
+        What do you want to rank outfits by? 
+        length: 
+        append to criteria
+        type:
+        append
+        citeria = [long, short, pants, leggings]
+            
+        
+        Saved to a list, that grace can read in to rank choices
 
         """
     
         
     def display():
         """
+        Andy and Jay 
+        Take what grace has ranked, and send it to a textfile 
             This function will display all "outfits" made from the 
             textfile that the user can output to
         
