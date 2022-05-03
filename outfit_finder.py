@@ -1,4 +1,8 @@
+# Import writer class from csv module
+from csv import writer
 import pandas as pd
+
+
 
 class MyCloset:
     """ Help users pick an outfit based on 
@@ -147,6 +151,10 @@ class MyCloset:
             match_friend (list): list of clothing items from your closet
 
         """
+        
+        
+        
+        
     
     def packing():
         """
@@ -167,7 +175,7 @@ class MyCloset:
             list: outfit list
 
         """
-    def add_clothing():
+    def add_clothing(self, closet_df):
         """
         concat() 
         *make new df with users new outfit
@@ -184,13 +192,30 @@ class MyCloset:
         add_clothing material (str): jean, cotton, khaki, spandex
         add_clothing_gender (str): male or female
         add_clothing_weather (str): warm or cold
-        
-        Raises
-            ValueError if user doesn't input the correct data type
-            for the clothing item 
-        
-        
+    
         """
+        add_clothing_name = str(input("write the type of clothing: \n"))
+        add_clothing_color = str(input("color?: \n"))
+        add_clothing_length = str(input("length?: \n"))
+        add_clothing_material = str(input("material?: \n"))
+        add_clothing_gender = str(input("gender?: \n"))
+        add_clothing_weather = str(input("weather?: \n"))
+        
+        new_row = [add_clothing_name, add_clothing_color, add_clothing_length, 
+                    add_clothing_material, add_clothing_gender, add_clothing_weather]
+        
+        with open(closet_df, 'a') as f:
+            # Pass this file object to csv.writer() and get a writer object
+            writer_object = writer(f)
+            # Pass the list as an argument into the writerow()
+            writer_object.writerow(new_row)
+            
+            #Close the file object
+            f.close()
+                    
+                    
+        
+        
     
     def my_outfits(self): 
         """
