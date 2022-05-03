@@ -105,8 +105,16 @@ class MyCloset:
                 print(MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"])
                 
                         
-    def rank_choices():
-            """This is going to be the main ranking function for 
+    def get_critera(self): 
+        criteria = []
+        weather_choice = input("Please pick the weather: warm, cold, both: ")
+        #we don't need to add in type because we are sorting all of them 
+        occasion_choice = input("Please pick the style: formal, causual, both ")
+        color_choice = input("Please chose a color: black, blue, white, tan, gray, pink, purple, silver ")
+        criteria.append(occasion_choice, color_choice, weather_choice)
+        return criteria
+    def rank_choices(self, criteria):
+        """This is going to be the main ranking function for 
             each piece of clothing.
         
         Args:
@@ -118,6 +126,17 @@ class MyCloset:
             current criteria.
         
         """
+        criteria = self.get_criteria()
+        wardrobe_lists = self.closet_df.to_records(index=False)
+        weather_choice = input("Please pick the weather: warm, cold, both: ")
+        #we don't need to add in type because we are sorting all of them 
+        occasion_choice = input("Please pick the style: formal, causual, both ")
+        color_choice = input("Please chose a color: black, blue, white, tan, gray, pink, purple, silver ")
+        #criteria = (occasion_choice, color_choice, weather_choice)
+        color_matchs = sorted(wardrobe_lists, key=lambda wardrobe_lists: ((wardrobe_lists[-1] == criteria[1]), 
+                                                                  (wardrobe_lists[5] == criteria[0]), 
+                                                                  (wardrobe_lists[6] == criteria[2])), 
+                      reverse=True)
     def highest_rated():
         """Picks out the highest ranked outfit from the list.
         
