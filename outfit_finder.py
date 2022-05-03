@@ -8,17 +8,15 @@ class MyCloset:
         closet_df(df): dataframe of the closet items 
     """
     
-    closet_df = pd.read_csv ("fashion_project.csv")
-    closet_df = pd.DataFrame((closet_df), 
-                columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
-    print(closet_df)
-    
-    def __init__(self, closet_df):
+    def __init__(self):
         """ 
             Docstring
         """
-        self.closet = closet_df
-        criteria = []
+        closet_df = pd.read_csv ("fashion_project.csv")
+        closet_df = pd.DataFrame((closet_df), 
+                columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
+        print(closet_df)
+        
     
     
     def ask_user(user_choice):  
@@ -37,13 +35,12 @@ class MyCloset:
         
         """
         print("What would you like to do?")
-        print("1. pick an outfit for the day\n2. based on friends style\n3. pack for a trip\n4. add new clothes to closet")
+        print("1. pick an outfit for the day\n2. based on friends style\
+            \n3. pack for a trip\n4. add new clothes to closet\
+              \n5. rank my clothing items")
+    
         user_choice = int(input("I would like to: "))
-          
-        if (user_choice != 1 and user_choice !=2 and 
-            user_choice != 3 and user_choice !=4):
-            raise ValueError ("This is not a valid answer choice")
-        else:
+        if user_choice == 1 or 2 or 3 or 4 or 5:
             return user_choice
         
 
@@ -172,6 +169,9 @@ class MyCloset:
         """
     def add_clothing():
         """
+        concat() 
+        *make new df with users new outfit
+        *concat that new df with closet_df and return as closet_df? 
         magic methods
         Jiwon 
         This function will add clothing to the closet
@@ -192,7 +192,7 @@ class MyCloset:
         
         """
     
-    def my_outfits(): 
+    def my_outfits(self): 
         """
         Haley 
         Take users criteria and rank priority to determine outfits
@@ -216,6 +216,7 @@ class MyCloset:
         Saved to a list, that grace can read in to rank choices
 
         """
+        print(self.criteria )
     
         
     def display():
@@ -235,16 +236,19 @@ class MyCloset:
         """
       
 if __name__ == "__main__":
-    MyCloset()
+    #MyCloset()
     if MyCloset.ask_user(user_choice= 1):
         MyCloset.day_outfit()
-    elif MyCloset.ask_user(user_choice = 2):
+"""
+     if MyCloset.ask_user(user_choice = 2):
         MyCloset.clothing_style()
-    elif MyCloset.ask_user(user_choice = 3):
+    if MyCloset.ask_user(user_choice = 3):
         MyCloset.packing()
-    elif MyCloset.ask_user(user_choice = 4):
+    if MyCloset.ask_user(user_choice = 4):
         MyCloset.add_clothing()
-        
+    if MyCloset.ask_user(user_choice = 5):
+        print("this is wrorking")
+"""       
         
 
 """
