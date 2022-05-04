@@ -145,6 +145,7 @@ class MyCloset:
                                                                   (wardrobe_lists[6] == self.criteria[2])), 
                       reverse=True)
         return self.matched_items
+    
     def highest_rated(self):
         """Picks out the highest ranked outfit from the list.
         
