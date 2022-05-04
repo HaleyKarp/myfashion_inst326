@@ -299,6 +299,9 @@ class MyCloset:
 
         """
     def interpret_choice(self):
+        """Call the appropriate functions internally to interpret what the user wants to do
+            upon instantiation of a MyCloset object.
+        """
         choice = self.ask_user()
         if choice == 1:
             self.day_outfit()
