@@ -110,22 +110,27 @@ class MyCloset:
                 
                         
     def get_criteria(self): 
-        
+        """Asks the user for criteria which they want to rank their outfits on. They can pick
+            based on weather, color, and occasion.
+
+        Returns:
+            list (string tuples): A list of strings where each index is the answer for the choices. 
+        """
         weather_choice = input("Please pick the weather: warm, cold, both: ")
-        #we don't need to add in type because we are sorting all of them 
         occasion_choice = input("Please pick the style: formal, causual, both ")
         color_choice = input("Please chose a color: black, blue, white, tan, gray, pink, purple, silver ")
         self.criteria.append(occasion_choice)
         self.criteria.append(color_choice)
         self.criteria.append(weather_choice)
         return self.criteria
+    
     def rank_choices(self):
         """This is going to be the main ranking function for 
             each piece of clothing.
         
         Args:
-            criteria (list): list of strings with the answers to questions
-                to serve as the sorting criteria
+            criteria (list): A list of tuples which represent each row of the dataframe 
+                                where each row is a clothing item.
         
         Returns:
             A sorted and ranked list of closet items tuples based on the 
@@ -138,7 +143,6 @@ class MyCloset:
                                                                   (wardrobe_lists[5] == self.criteria[0]), 
                                                                   (wardrobe_lists[6] == self.criteria[2])), 
                       reverse=True)
-        #print(self.matched_items)
         return self.matched_items
     def highest_rated(self):
         """Picks out the highest ranked outfit from the list.
@@ -150,7 +154,6 @@ class MyCloset:
             A string representation of the top ranked outfit broken
             down into its compenents (top, bottoms, etc.).
         """
-        #matched_items = self.rank_choices()
         #a list of tuples ordered by tops, bottoms, then shoes
         outfit_complete = []
         clothing_tops = [item for item in self.matched_items if 'tops' in item]
@@ -159,7 +162,10 @@ class MyCloset:
         outfit_complete.append(clothing_tops[0])
         outfit_complete.append(clothing_bottoms[0])
         outfit_complete.append(clothing_shoes[0])
-        print('THIS IS THE COMPLETE OUTFIT!!!: ', outfit_complete)
+        print('Top:', clothing_tops[0])
+        print('Bottoms:', clothing_bottoms[0])
+        print('Shoes:', clothing_shoes[0])
+        #print('THIS IS THE COMPLETE OUTFIT!!!: ', outfit_complete)
         return outfit_complete
         
     
