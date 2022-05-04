@@ -16,14 +16,18 @@ class MyCloset:
         """ 
             Docstring
         """
-        closet_df = pd.read_csv ("fashion_project.csv")
-        closet_df = pd.DataFrame((closet_df), 
-                columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
-        print(closet_df)
+        self.closet_df = pd.read_csv ("fashion_project.csv")
+        self.criteria = []
+        self.matched_items = []
+        #self.ask_user()
+        self.interpret_choice()
+        #closet_df = pd.DataFrame((closet_df), 
+               # columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
+       # print(self.closet_df)
         
     
     
-    def ask_user(user_choice):  
+    def ask_user(self):  
         """
         Function that asks user what they want to do
             1. pick an outfit for the day
@@ -48,7 +52,7 @@ class MyCloset:
             return user_choice
         
 
-    def day_outfit(): 
+    def day_outfit(self): 
         """
         Allow user to indicate what they want to find an outfit for, 
         based on type of attire, color, or the weather 
@@ -105,14 +109,16 @@ class MyCloset:
                 print(MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"])
                 
                         
-    def get_critera(self): 
-        criteria = []
+    def get_criteria(self): 
+        
         weather_choice = input("Please pick the weather: warm, cold, both: ")
         #we don't need to add in type because we are sorting all of them 
         occasion_choice = input("Please pick the style: formal, causual, both ")
         color_choice = input("Please chose a color: black, blue, white, tan, gray, pink, purple, silver ")
-        criteria.append(occasion_choice, color_choice, weather_choice)
-        return criteria
+        self.criteria.append(occasion_choice)
+        self.criteria.append(color_choice)
+        self.criteria.append(weather_choice)
+        return self.criteria
     def rank_choices(self):
         """This is going to be the main ranking function for 
             each piece of clothing.
@@ -122,22 +128,18 @@ class MyCloset:
                 to serve as the sorting criteria
         
         Returns:
-            A sorted and ranked list of closet items based on the 
+            A sorted and ranked list of closet items tuples based on the 
             current criteria.
         
         """
-        criteria = self.get_criteria()
         wardrobe_lists = self.closet_df.to_records(index=False)
-        weather_choice = input("Please pick the weather: warm, cold, both: ")
-        #we don't need to add in type because we are sorting all of them 
-        occasion_choice = input("Please pick the style: formal, causual, both ")
-        color_choice = input("Please chose a color: black, blue, white, tan, gray, pink, purple, silver ")
         #criteria = (occasion_choice, color_choice, weather_choice)
-        matched_items = sorted(wardrobe_lists, key=lambda wardrobe_lists: ((wardrobe_lists[-1] == criteria[1]), 
-                                                                  (wardrobe_lists[5] == criteria[0]), 
-                                                                  (wardrobe_lists[6] == criteria[2])), 
+        self.matched_items = sorted(wardrobe_lists, key=lambda wardrobe_lists: ((wardrobe_lists[-1] == self.criteria[1]), 
+                                                                  (wardrobe_lists[5] == self.criteria[0]), 
+                                                                  (wardrobe_lists[6] == self.criteria[2])), 
                       reverse=True)
-        return matched_items
+        #print(self.matched_items)
+        return self.matched_items
     def highest_rated(self):
         """Picks out the highest ranked outfit from the list.
         
@@ -148,15 +150,16 @@ class MyCloset:
             A string representation of the top ranked outfit broken
             down into its compenents (top, bottoms, etc.).
         """
-        matched_items = self.rank_choices()
+        #matched_items = self.rank_choices()
         #a list of tuples ordered by tops, bottoms, then shoes
         outfit_complete = []
-        clothing_tops = [item for item in matched_items if 'tops' in item]
-        clothing_bottoms = [item for item in matched_items if 'bottoms' in item]
-        clothing_shoes = [item for item in matched_items if 'shoes' in item]
-        outfit_complete.append(clothing_tops)
-        outfit_complete.append(clothing_bottoms)
-        outfit_complete.append(clothing_tops)
+        clothing_tops = [item for item in self.matched_items if 'tops' in item]
+        clothing_bottoms = [item for item in self.matched_items if 'bottoms' in item]
+        clothing_shoes = [item for item in self.matched_items if 'shoes' in item]
+        outfit_complete.append(clothing_tops[0])
+        outfit_complete.append(clothing_bottoms[0])
+        outfit_complete.append(clothing_shoes[0])
+        print('THIS IS THE COMPLETE OUTFIT!!!: ', outfit_complete)
         return outfit_complete
         
     
@@ -289,11 +292,25 @@ class MyCloset:
             display the outfits made by the user 
 
         """
+    def interpret_choice(self):
+        choice = self.ask_user()
+        if choice == 1:
+            self.day_outfit()
+        elif choice == 5:
+             self.get_criteria()
+             self.rank_choices()
+             self.highest_rated()
       
 if __name__ == "__main__":
     #MyCloset()
-    if MyCloset.ask_user(user_choice= 1):
-        MyCloset.day_outfit()
+    closet = MyCloset()
+    #choice = closet.ask_user()
+    ''' if choice == 1:
+        closet.day_outfit()
+    elif choice == 5:
+        closet.get_criteria()
+        closet.rank_choices()
+        closet.highest_rated()'''
 """
      if MyCloset.ask_user(user_choice = 2):
         MyCloset.clothing_style()
