@@ -5,17 +5,18 @@ import pandas as pd
 
 
 class MyCloset:
-    """ Help users pick an outfit based on 
-    criteria given by the user
+    """ Represents an instance of a closet full of outfits. The user can interact with this closet.
     
     Attribute:
         closet_df(df): dataframe of the closet items 
     """
     
-    def __init__(self):
-        """ 
-            Docstring
+    def __init__(self, path):
+        """ Creates an instance of MyCloset object. 
+            
         """
+        #self.closet_df = pd.read_csv (self.path)
+        #when we submit it we need to not hard code this line
         self.closet_df = pd.read_csv ("fashion_project.csv")
         self.criteria = []
         self.matched_items = []
