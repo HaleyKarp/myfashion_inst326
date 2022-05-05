@@ -233,6 +233,18 @@ class MyCloset:
             match_friend (list): list of clothing items from your closet
 
         """
+        
+        #make dataframe with friend qualities
+        #use dataframe comparisons/sets and such to compare
+        #data = {'Name': ['Tom', 'Joseph', 'Krish', 'John'], 'Age': [20, 21, 19, 18]}
+        print("We see you want an outfit like your friends, let's see what we can do!")
+        friend_length =input("Do your friends like long or short clothing? ") 
+        friend_material = input("Do your friends like jeans, khakis or cotton? ")
+        friends_color = input("What colors does your friend tend to where?")
+        
+        friend_df = {"length":[friend_length]}
+        print(friend_df)
+         
     
     def packing():
         """
@@ -341,6 +353,8 @@ class MyCloset:
         choice = self.ask_user()
         if choice == 1:
             self.day_outfit()
+        elif choice == 2:
+            self.clothing_style()
         elif choice == 5:
             self.get_criteria()
             self.rank_choices()
