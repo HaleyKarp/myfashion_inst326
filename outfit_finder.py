@@ -233,7 +233,7 @@ class MyCloset:
             match_friend (list): list of clothing items from your closet
 
         """
-        friends_df = pd.read_csv(path)
+        friends_df = pd.read_csv("friends_closet - fashion_project - Sheet1.csv")
         friends_closet = self.closet_df.to_records(index=False)
         our_closet = self.closet_df.to_records(index=False)
         our_closet_set = set()
@@ -344,32 +344,3 @@ if __name__ == "__main__":
     closet = MyCloset()
     #choice = closet.ask_user()
  
-
-"""
-    MyCloset.display()
-    MyCloset.ask_user()
-    MyCloset.my_outfits()
-    MyCloset.add_clothing()
-    MyCloset.packing()
-    MyCloset.clothing_style()
-    MyCloset.highest_rated()
-    MyCloset.rank_choices()
-    MyCloset.day_outfit()
-"""
-
-
-"""
-This is actually our main function that should call everything 
-        (mini notes below abt ideas for this)
-        ask_user() should get called first 
-        If user picks 1 run: 
-                - day_oufit()
-                - ranking function
-                - funtion that displays the number 1 outfit of each item 
-    if user picks 2...
-"""
-
-
-
-
-        
