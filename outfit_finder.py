@@ -309,7 +309,7 @@ class MyCloset:
             f.close()
     
         
-    def display():
+    def __str__(self):
         """
         Andy and Jay 
         Take what grace has ranked, and send it to a textfile 
