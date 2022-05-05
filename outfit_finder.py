@@ -338,7 +338,7 @@ class MyCloset:
             self.rank_choices()
             self.highest_rated()
         elif choice == 4:
-            self.add_clothing(self)
+            self.add_clothing()
       
 if __name__ == "__main__":
     closet = MyCloset()
