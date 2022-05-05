@@ -212,7 +212,7 @@ class MyCloset:
         return outfit_complete
         
     
-    def clothing_style():
+    def clothing_style(self):
         """
         Sequence unpacking?!?!?!
         Read it in as a tuple and unpack it!!!
@@ -233,18 +233,23 @@ class MyCloset:
             match_friend (list): list of clothing items from your closet
 
         """
-        
-        #make dataframe with friend qualities
-        #use dataframe comparisons/sets and such to compare
-        #data = {'Name': ['Tom', 'Joseph', 'Krish', 'John'], 'Age': [20, 21, 19, 18]}
-        print("We see you want an outfit like your friends, let's see what we can do!")
-        friend_length =input("Do your friends like long or short clothing? ") 
-        friend_material = input("Do your friends like jeans, khakis or cotton? ")
-        friends_color = input("What colors does your friend tend to where?")
-        
-        friend_df = {"length":[friend_length]}
-        print(friend_df)
-         
+        friends_df = pd.read_csv(path)
+        friends_closet = self.closet_df.to_records(index=False)
+        our_closet = self.closet_df.to_records(index=False)
+        our_closet_set = set()
+        friends_closet_set = set()
+        for item in our_closet:
+          new_item = tuple(item)
+          our_closet_set.add(new_item)
+        for item in friends_closet:
+          new_item = tuple(item)
+          friends_closet_set.add(new_item)
+        matching_set = our_closet_set.union(friends_closet_set)
+        print("These are the matched items: ")
+        for matched in matching_set:
+          print(matched, "\n")
+        #print(matching_set)
+                
     
     def packing():
         """
@@ -265,7 +270,7 @@ class MyCloset:
             list: outfit list
 
         """
-    def add_clothing(self, closet_df):
+    def add_clothing(self):
         """
         concat() 
         *make new df with users new outfit
@@ -294,7 +299,7 @@ class MyCloset:
         new_row = [add_clothing_name, add_clothing_color, add_clothing_length, 
                     add_clothing_material, add_clothing_gender, add_clothing_weather]
         
-        with open(closet_df, 'a') as f:
+        with open(self.closet_df, 'a') as f:
             # Pass this file object to csv.writer() and get a writer object
             writer_object = writer(f)
             # Pass the list as an argument into the writerow()
@@ -332,6 +337,8 @@ class MyCloset:
             self.get_criteria()
             self.rank_choices()
             self.highest_rated()
+        elif choice == 4:
+            self.add_clothing(self)
       
 if __name__ == "__main__":
     closet = MyCloset()
