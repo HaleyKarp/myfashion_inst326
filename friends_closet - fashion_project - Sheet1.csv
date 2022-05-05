@@ -1,0 +1,11 @@
+category,length,type,material,gender,event,weather,color
+bottoms,short,shorts,khaki,male,both,warm,tan
+bottoms,long,skirt,cotton,female,casual,warm,blue
+tops,short,t-shirt,cotton,both,casual,warm,gray
+tops,short,tank,cotton,female,casual,warm,pink
+tops,short,tank,cotton,female,formal,warm,purple
+tops,short,t-shirt,cotton,male,formal,warm,black
+tops,long,sweater,cotton,female,formal,cold,tan
+tops,long,sweater,cotton,male,formal,cold,blue
+shoes,,sneakers,,both,casual,both,white
+shoes,,oxfords,,male,formal,both,tan
