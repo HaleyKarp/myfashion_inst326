@@ -11,13 +11,12 @@ class MyCloset:
         closet_df(df): dataframe of the closet items 
     """
     
-<<<<<<< HEAD
 
     closet_df = pd.read_csv ("fashion_project.csv")
     closet_df = pd.DataFrame((closet_df), 
                 columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
     print(closet_df)
-=======
+        
     def __init__(self):
         """ Creates an instance of MyCloset object. 
             
@@ -32,9 +31,6 @@ class MyCloset:
         #closet_df = pd.DataFrame((closet_df), 
                # columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
        # print(self.closet_df)
->>>>>>> 583146a10e84adb2eece2d4295616571b667ede7
-        
-    
     
     def ask_user(self):  
         """
@@ -94,6 +90,48 @@ class MyCloset:
                 print(casual)
                 
                 gender = input("\nAre you a male or female? ")
+                if gender == "male":
+                    male = casual[MyCloset.closet_df["gender"] == "male"]
+                    print("Here are your closet items\n", male)
+                    
+                if gender == "female":
+                    female = casual[MyCloset.closet_df["gender"] == "female"]
+                    print("Here are your closet items\n", female)
+            
+            else:
+                print("These are all the clothing you have that are casual.")
+                formal = MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"]
+                print(formal)
+                
+                gender = input("\nAre you a male or female? ")
+                if gender == "male":
+                    male = formal[MyCloset.closet_df["gender"] == "male"]
+                    print("Here are your closet items\n", male)
+                    
+                if gender == "female":
+                    female = formal[MyCloset.closet_df["gender"] == "female"]
+                    print("Here are your closet items\n", female)
+        
+        elif day_answer == 2:
+            colors = MyCloset.closet_df.groupby("color")
+            print(colors)
+        
+        else:
+            print("Let's see what your closet has based on weather:")
+            weather = input("What is the weather today? warm, cold, between? ")
+            if weather == "warm":
+                warm = MyCloset.closet_df[MyCloset.closet_df["weather"] == "warm"]
+                print(warm)
+            elif weather == "cold":
+                cold = MyCloset.closet_df[MyCloset.closet_df["weather"] == "cold"]
+                print(cold)
+            else: 
+                both = MyCloset.closet_df[MyCloset.closet_df["weather"] == "both"]
+                print(both)
+            
+                    
+                    
+            """
                 if gender == "female":
                     female_casual = casual[MyCloset.closet_df["gender"] == "female"]
                     female_bottoms = female_casual[MyCloset.closet_df["category"] == "bottoms"]
@@ -110,15 +148,7 @@ class MyCloset:
                         #print(female_casual.loc[1])
                     #female_tops = female_casual[MyCloset.closet_df["category"] == "tops"]
                     #female_shoes = female_casual[MyCloset.closet_df["category"] == "shoes"]
-                    
-                    
-                elif gender == "male":
-                    male_casual = casual[MyCloset.closet_df["gender"] == "male"]
-                    print(male_casual)
-                
-            elif casform == "formal":
-                print("These are all the clothing you have that are formal.")
-                print(MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"])
+                """
                 
                         
     def get_criteria(self): 
@@ -203,9 +233,6 @@ class MyCloset:
             match_friend (list): list of clothing items from your closet
 
         """
-        
-        
-    
     
     def packing():
         """
@@ -263,9 +290,6 @@ class MyCloset:
             
             #Close the file object
             f.close()
-                    
-                    
-        
         
     
     def my_outfits(self): 
@@ -318,37 +342,14 @@ class MyCloset:
         if choice == 1:
             self.day_outfit()
         elif choice == 5:
-             self.get_criteria()
-             self.rank_choices()
-             self.highest_rated()
+            self.get_criteria()
+            self.rank_choices()
+            self.highest_rated()
       
 if __name__ == "__main__":
-<<<<<<< HEAD
-    MyCloset()
-    if MyCloset.ask_user(user_choice = 1):
-        MyCloset.day_outfit()
-=======
-    #MyCloset()
     closet = MyCloset()
     #choice = closet.ask_user()
-    ''' if choice == 1:
-        closet.day_outfit()
-    elif choice == 5:
-        closet.get_criteria()
-        closet.rank_choices()
-        closet.highest_rated()'''
->>>>>>> 583146a10e84adb2eece2d4295616571b667ede7
-"""
-     if MyCloset.ask_user(user_choice = 2):
-        MyCloset.clothing_style()
-    if MyCloset.ask_user(user_choice = 3):
-        MyCloset.packing()
-    if MyCloset.ask_user(user_choice = 4):
-        MyCloset.add_clothing()
-    if MyCloset.ask_user(user_choice = 5):
-        print("this is wrorking")
-"""       
-        
+ 
 
 """
     MyCloset.display()
