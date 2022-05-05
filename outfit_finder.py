@@ -11,7 +11,7 @@ class MyCloset:
         closet_df(df): dataframe of the closet items 
     """
     
-    def __init__(self, path):
+    def __init__(self):
         """ Creates an instance of MyCloset object. 
             
         """
