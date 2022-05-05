@@ -12,14 +12,11 @@ class MyCloset:
         closet_df(df): dataframe of the closet items 
     """
     
-    def __init__(self):
-        """ 
-            Docstring
-        """
-        closet_df = pd.read_csv ("fashion_project.csv")
-        closet_df = pd.DataFrame((closet_df), 
+
+    closet_df = pd.read_csv ("fashion_project.csv")
+    closet_df = pd.DataFrame((closet_df), 
                 columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
-        print(closet_df)
+    print(closet_df)
         
     
     
@@ -44,7 +41,10 @@ class MyCloset:
               \n5. rank my clothing items")
     
         user_choice = int(input("I would like to: "))
-        if user_choice == 1 or 2 or 3 or 4 or 5:
+        if (user_choice == 1) or (user_choice == 2) or (user_choice == 3) or (user_choice == 4) or (user_choice == 5):
+            return user_choice
+        else: 
+            user_choice = int(input("Please try again, enter 1 - 5."))
             return user_choice
         
 
@@ -67,7 +67,7 @@ class MyCloset:
         3. What is the weather supposed to be like?
     
         """
-        #print(MyCloset.closet_df)
+
         print("Would you like to find an outfit based on: \n1.Casual vs Formal?\n2.Color\n3.Weather ")
         day_answer = int(input("Insert number that corresponds to answer choice: "))
         if day_answer == 1:
@@ -153,8 +153,7 @@ class MyCloset:
         """
         
         
-        
-        
+    
     
     def packing():
         """
@@ -261,8 +260,8 @@ class MyCloset:
         """
       
 if __name__ == "__main__":
-    #MyCloset()
-    if MyCloset.ask_user(user_choice= 1):
+    MyCloset()
+    if MyCloset.ask_user(user_choice = 1):
         MyCloset.day_outfit()
 """
      if MyCloset.ask_user(user_choice = 2):
