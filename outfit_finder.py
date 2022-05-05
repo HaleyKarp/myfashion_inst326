@@ -86,47 +86,47 @@ class MyCloset:
             casform = input("casual or formal?")
             if casform == "casual":
                 print("These are all the clothing you have that are casual.")
-                casual = MyCloset.closet_df[MyCloset.closet_df["occasion"] == "casual"]
+                casual = self.closet_df[self.closet_df["occasion"] == "casual"]
                 print(casual)
                 
                 gender = input("\nAre you a male or female? ")
                 if gender == "male":
-                    male = casual[MyCloset.closet_df["gender"] == "male"]
+                    male = casual[self.closet_df["gender"] == "male"]
                     print("Here are your closet items\n", male)
                     
                 if gender == "female":
-                    female = casual[MyCloset.closet_df["gender"] == "female"]
+                    female = casual[self.closet_df["gender"] == "female"]
                     print("Here are your closet items\n", female)
             
             else:
                 print("These are all the clothing you have that are casual.")
-                formal = MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"]
+                formal = self.closet_df[self.closet_df["occasion"] == "formal"]
                 print(formal)
                 
                 gender = input("\nAre you a male or female? ")
                 if gender == "male":
-                    male = formal[MyCloset.closet_df["gender"] == "male"]
+                    male = formal[self.closet_df["gender"] == "male"]
                     print("Here are your closet items\n", male)
                     
                 if gender == "female":
-                    female = formal[MyCloset.closet_df["gender"] == "female"]
+                    female = formal[self.closet_df["gender"] == "female"]
                     print("Here are your closet items\n", female)
         
         elif day_answer == 2:
-            colors = MyCloset.closet_df.groupby("color")
+            colors = self.closet_df.groupby("color")
             print(colors)
         
         else:
             print("Let's see what your closet has based on weather:")
             weather = input("What is the weather today? warm, cold, between? ")
             if weather == "warm":
-                warm = MyCloset.closet_df[MyCloset.closet_df["weather"] == "warm"]
+                warm = self.closet_df[self.closet_df["weather"] == "warm"]
                 print(warm)
             elif weather == "cold":
-                cold = MyCloset.closet_df[MyCloset.closet_df["weather"] == "cold"]
+                cold = self.closet_df[self.closet_df["weather"] == "cold"]
                 print(cold)
             else: 
-                both = MyCloset.closet_df[MyCloset.closet_df["weather"] == "both"]
+                both = self.closet_df[self.closet_df["weather"] == "both"]
                 print(both)
             
                     
@@ -302,33 +302,6 @@ class MyCloset:
             
             #Close the file object
             f.close()
-        
-    
-    def my_outfits(self): 
-        """
-        Haley 
-        Take users criteria and rank priority to determine outfits
-        
-        Args:
-            new_outfit (list): top, bottom and shoes that will 
-            be created as a list under "outfit" in new textfile 
-        
-        Returns:
-             my_outfits(textfile): new textfile where the columns chosen will be
-            saved to 
-            
-        What do you want to rank outfits by? 
-        length: 
-        append to criteria
-        type:
-        append
-        citeria = [long, short, pants, leggings]
-            
-        
-        Saved to a list, that grace can read in to rank choices
-
-        """
-        print(self.criteria )
     
         
     def display():
