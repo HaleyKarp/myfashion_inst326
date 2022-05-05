@@ -5,22 +5,38 @@ import pandas as pd
 
 
 class MyCloset:
-    """ Help users pick an outfit based on 
-    criteria given by the user
+    """ Represents an instance of a closet full of outfits. The user can interact with this closet.
     
     Attribute:
         closet_df(df): dataframe of the closet items 
     """
     
+<<<<<<< HEAD
 
     closet_df = pd.read_csv ("fashion_project.csv")
     closet_df = pd.DataFrame((closet_df), 
                 columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
     print(closet_df)
+=======
+    def __init__(self):
+        """ Creates an instance of MyCloset object. 
+            
+        """
+        #self.closet_df = pd.read_csv (self.path)
+        #when we submit it we need to not hard code this line
+        self.closet_df = pd.read_csv ("fashion_project.csv")
+        self.criteria = []
+        self.matched_items = []
+        #self.ask_user()
+        self.interpret_choice()
+        #closet_df = pd.DataFrame((closet_df), 
+               # columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
+       # print(self.closet_df)
+>>>>>>> 583146a10e84adb2eece2d4295616571b667ede7
         
     
     
-    def ask_user(user_choice):  
+    def ask_user(self):  
         """
         Function that asks user what they want to do
             1. pick an outfit for the day
@@ -48,7 +64,7 @@ class MyCloset:
             return user_choice
         
 
-    def day_outfit(): 
+    def day_outfit(self): 
         """
         Allow user to indicate what they want to find an outfit for, 
         based on type of attire, color, or the weather 
@@ -105,20 +121,43 @@ class MyCloset:
                 print(MyCloset.closet_df[MyCloset.closet_df["occasion"] == "formal"])
                 
                         
-    def rank_choices():
-            """This is going to be the main ranking function for 
+    def get_criteria(self): 
+        """Asks the user for criteria which they want to rank their outfits on. They can pick
+            based on weather, color, and occasion.
+
+        Returns:
+            list (string tuples): A list of strings where each index is the answer for the choices. 
+        """
+        weather_choice = input("Please pick the weather: warm, cold, both: ")
+        occasion_choice = input("Please pick the style: formal, causual, both ")
+        color_choice = input("Please chose a color: black, blue, white, tan, gray, pink, purple, silver ")
+        self.criteria.append(occasion_choice)
+        self.criteria.append(color_choice)
+        self.criteria.append(weather_choice)
+        return self.criteria
+    
+    def rank_choices(self):
+        """This is going to be the main ranking function for 
             each piece of clothing.
         
         Args:
-            criteria (list): list of strings with the answers to questions
-                to serve as the sorting criteria
+            criteria (list): A list of tuples which represent each row of the dataframe 
+                                where each row is a clothing item.
         
         Returns:
-            A sorted and ranked list of closet items based on the 
+            A sorted and ranked list of closet items tuples based on the 
             current criteria.
         
         """
-    def highest_rated():
+        wardrobe_lists = self.closet_df.to_records(index=False)
+        #criteria = (occasion_choice, color_choice, weather_choice)
+        self.matched_items = sorted(wardrobe_lists, key=lambda wardrobe_lists: ((wardrobe_lists[-1] == self.criteria[1]), 
+                                                                  (wardrobe_lists[5] == self.criteria[0]), 
+                                                                  (wardrobe_lists[6] == self.criteria[2])), 
+                      reverse=True)
+        return self.matched_items
+    
+    def highest_rated(self):
         """Picks out the highest ranked outfit from the list.
         
         Args:
@@ -128,6 +167,19 @@ class MyCloset:
             A string representation of the top ranked outfit broken
             down into its compenents (top, bottoms, etc.).
         """
+        #a list of tuples ordered by tops, bottoms, then shoes
+        outfit_complete = []
+        clothing_tops = [item for item in self.matched_items if 'tops' in item]
+        clothing_bottoms = [item for item in self.matched_items if 'bottoms' in item]
+        clothing_shoes = [item for item in self.matched_items if 'shoes' in item]
+        outfit_complete.append(clothing_tops[0])
+        outfit_complete.append(clothing_bottoms[0])
+        outfit_complete.append(clothing_shoes[0])
+        print('Top:', clothing_tops[0])
+        print('Bottoms:', clothing_bottoms[0])
+        print('Shoes:', clothing_shoes[0])
+        #print('THIS IS THE COMPLETE OUTFIT!!!: ', outfit_complete)
+        return outfit_complete
         
     
     def clothing_style():
@@ -258,11 +310,34 @@ class MyCloset:
             display the outfits made by the user 
 
         """
+    def interpret_choice(self):
+        """Call the appropriate functions internally to interpret what the user wants to do
+            upon instantiation of a MyCloset object.
+        """
+        choice = self.ask_user()
+        if choice == 1:
+            self.day_outfit()
+        elif choice == 5:
+             self.get_criteria()
+             self.rank_choices()
+             self.highest_rated()
       
 if __name__ == "__main__":
+<<<<<<< HEAD
     MyCloset()
     if MyCloset.ask_user(user_choice = 1):
         MyCloset.day_outfit()
+=======
+    #MyCloset()
+    closet = MyCloset()
+    #choice = closet.ask_user()
+    ''' if choice == 1:
+        closet.day_outfit()
+    elif choice == 5:
+        closet.get_criteria()
+        closet.rank_choices()
+        closet.highest_rated()'''
+>>>>>>> 583146a10e84adb2eece2d4295616571b667ede7
 """
      if MyCloset.ask_user(user_choice = 2):
         MyCloset.clothing_style()
