@@ -286,13 +286,14 @@ class MyCloset:
         add_clothing_weather = str(input("weather?: \n"))
         
         new_row = [add_clothing_name, add_clothing_color, add_clothing_length, 
-                    add_clothing_material, add_clothing_gender, add_clothing_weather]
-        
+                   add_clothing_material, add_clothing_gender, add_clothing_weather]
+         
         with open("fashion_project.csv", 'a', newline="") as f:
             i = writer(f)
             i.writerow(new_row)
         
         print(f"your clothing is added succesfully!")
+        
         
     def __str__(self):
         """
