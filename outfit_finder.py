@@ -314,7 +314,8 @@ class MyCloset:
         with open("fashion_project.csv", 'a', newline="") as f:
             i = writer(f)
             i.writerow(new_row)
-            
+        
+        print(f"your clothing is added succesfully!")
             
         
         
@@ -348,11 +349,6 @@ class MyCloset:
             self.highest_rated()
         elif choice == 4:
             self.add_clothing()
-<<<<<<< HEAD
-=======
-        elif choice == 3:
-            self.packing()
->>>>>>> b53aab18c237ca1cfc7f64f0018e853b4d32c111
       
 if __name__ == "__main__":
     closet = MyCloset()
