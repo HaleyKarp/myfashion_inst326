@@ -263,9 +263,6 @@ class MyCloset:
             print("We suggest, two bottoms, two tops, and one shoes")
         else:
             print("We suggest 4 bottoms, 3 tops and 2 shoes.")
-            
-
-            
         
         
     def add_clothing(self):
@@ -296,6 +293,7 @@ class MyCloset:
             i.writerow(new_row)
         
         print(f"your clothing is added succesfully!")
+        
             
         
         
@@ -329,6 +327,8 @@ class MyCloset:
             self.highest_rated()
         elif choice == 4:
             self.add_clothing()
+        elif choice == 3:
+            self.packing()
       
 if __name__ == "__main__":
     closet = MyCloset()
