@@ -251,7 +251,7 @@ class MyCloset:
         #print(matching_set)
                 
     
-    def packing():
+    def packing(self):
         """
         Andy
         If user packs for a trip
@@ -270,6 +270,24 @@ class MyCloset:
             list: outfit list
 
         """
+        pack_weather = input("You have a trip! That is wonderful. What's the weather going to be like? ")
+        if pack_weather == "warm":
+            warm_clothing = self.closet_df[self.closet_df["weather"].str.contains("^w.*") == True]
+            print(warm_clothing)
+            days_gone = int(input("How many days will you be gone? "))
+            if days_gone > 0 and days_gone < 3:
+                print("We suggest, two bottoms, two tops, and one shoes")
+                
+        elif pack_weather == "cold":
+            cold_clothing = self.closet_df[self.closet_df["weather"].str.contains("^c.*") == True]
+            print(cold_clothing)
+        
+        
+            
+
+            
+        
+        
     def add_clothing(self):
         """
         This function will add clothing to the closet
@@ -330,6 +348,11 @@ class MyCloset:
             self.highest_rated()
         elif choice == 4:
             self.add_clothing()
+<<<<<<< HEAD
+=======
+        elif choice == 3:
+            self.packing()
+>>>>>>> b53aab18c237ca1cfc7f64f0018e853b4d32c111
       
 if __name__ == "__main__":
     closet = MyCloset()
