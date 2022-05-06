@@ -113,8 +113,9 @@ class MyCloset:
                     print("Here are your closet items\n", female)
         
         elif day_answer == 2:
-            colors = self.closet_df.groupby("color")
-            print(colors)
+            colors = input("what is your favorite color?")
+            color_clothes = self.closet_df.groupby("color") == "blue"
+            print(color_clothes)
         
         else:
             print("Let's see what your closet has based on weather:")
@@ -327,11 +328,8 @@ class MyCloset:
             self.highest_rated()
         elif choice == 4:
             self.add_clothing()
-<<<<<<< HEAD
-=======
         elif choice == 3:
             self.packing()
->>>>>>> b53aab18c237ca1cfc7f64f0018e853b4d32c111
       
 if __name__ == "__main__":
     closet = MyCloset()
