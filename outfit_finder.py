@@ -294,9 +294,6 @@ class MyCloset:
         
         print(f"your clothing is added succesfully!")
         
-            
-        
-        
     def __str__(self):
         """
         Andy and Jay 
