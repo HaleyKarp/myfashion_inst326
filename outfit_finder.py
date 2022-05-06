@@ -129,27 +129,6 @@ class MyCloset:
                 both = self.closet_df[self.closet_df["weather"] == "both"]
                 print(both)
             
-                    
-                    
-            """
-                if gender == "female":
-                    female_casual = casual[MyCloset.closet_df["gender"] == "female"]
-                    female_bottoms = female_casual[MyCloset.closet_df["category"] == "bottoms"]
-                    bottom_color = input("Would you like the bottoms to be blue, white, or black?")
-                    if bottom_color == "blue":
-                        bottoms_color = female_bottoms[MyCloset.closet_df["color"] == "blue"]
-                        print(f"We reccomend one of these bottoms: \n{bottoms_color}")
-                        
-                    
-                    #female_tops = casual[MyCloset.closet_df["category"] == "tops"]
-                        #print(female_tops)
-                        #tops_color = female_tops[MyCloset.closet_df["color"] != "blue"]
-                        #print(f"The tops we reccomend to pair with it are: \n {tops_color}")
-                        #print(female_casual.loc[1])
-                    #female_tops = female_casual[MyCloset.closet_df["category"] == "tops"]
-                    #female_shoes = female_casual[MyCloset.closet_df["category"] == "shoes"]
-                """
-                
                         
     def get_criteria(self): 
         """Asks the user for criteria which they want to rank their outfits on. They can pick
@@ -274,15 +253,15 @@ class MyCloset:
         if pack_weather == "warm":
             warm_clothing = self.closet_df[self.closet_df["weather"].str.contains("^w.*") == True]
             print(warm_clothing)
-            days_gone = int(input("How many days will you be gone? "))
-            if days_gone > 0 and days_gone < 3:
-                print("We suggest, two bottoms, two tops, and one shoes")
-                
         elif pack_weather == "cold":
             cold_clothing = self.closet_df[self.closet_df["weather"].str.contains("^c.*") == True]
             print(cold_clothing)
         
-        
+        days_gone = int(input("How many days will you be gone? "))
+        if days_gone > 0 and days_gone < 3:
+            print("We suggest, two bottoms, two tops, and one shoes")
+        else:
+            print("We suggest 4 bottoms, 3 tops and 2 shoes.")
             
 
             
