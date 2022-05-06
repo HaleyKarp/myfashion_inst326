@@ -272,11 +272,6 @@ class MyCloset:
         """
     def add_clothing(self):
         """
-        concat() 
-        *make new df with users new outfit
-        *concat that new df with closet_df and return as closet_df? 
-        magic methods
-        Jiwon 
         This function will add clothing to the closet
         
         Args: 
@@ -287,7 +282,6 @@ class MyCloset:
         add_clothing material (str): jean, cotton, khaki, spandex
         add_clothing_gender (str): male or female
         add_clothing_weather (str): warm or cold
-    
         """
         add_clothing_name = str(input("write the type of clothing: \n"))
         add_clothing_color = str(input("color?: \n"))
@@ -299,15 +293,12 @@ class MyCloset:
         new_row = [add_clothing_name, add_clothing_color, add_clothing_length, 
                     add_clothing_material, add_clothing_gender, add_clothing_weather]
         
-        with open(self.closet_df, 'a') as f:
-            # Pass this file object to csv.writer() and get a writer object
-            writer_object = writer(f)
-            # Pass the list as an argument into the writerow()
-            writer_object.writerow(new_row)
+        with open("fashion_project.csv", 'a', newline="") as f:
+            i = writer(f)
+            i.writerow(new_row)
             
-            #Close the file object
-            f.close()
-    
+            
+        
         
     def __str__(self):
         """
@@ -338,7 +329,7 @@ class MyCloset:
             self.rank_choices()
             self.highest_rated()
         elif choice == 4:
-            self.add_clothing(self)
+            self.add_clothing()
       
 if __name__ == "__main__":
     closet = MyCloset()
