@@ -311,6 +311,11 @@ class MyCloset:
             display the outfits made by the user 
 
         """
+        return f"This closet has:"
+        
+        
+        
+        
     def interpret_choice(self):
         """Call the appropriate functions internally to interpret what the user wants to do
             upon instantiation of a MyCloset object.
@@ -331,5 +336,6 @@ class MyCloset:
       
 if __name__ == "__main__":
     closet = MyCloset()
+    print(closet)
     #choice = closet.ask_user()
  
