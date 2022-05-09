@@ -181,9 +181,11 @@ class MyCloset:
         """
         wardrobe_lists = self.closet_df.to_records(index=False)
         #criteria = (occasion_choice, color_choice, weather_choice)
-        self.matched_items = sorted(wardrobe_lists, key=lambda wardrobe_lists: ((wardrobe_lists[-1] == self.criteria[1]), 
-                                                                  (wardrobe_lists[5] == self.criteria[0]), 
-                                                                  (wardrobe_lists[6] == self.criteria[2])), 
+        self.matched_items = sorted(wardrobe_lists, 
+                                    key=lambda wardrobe_lists: 
+                                        ((wardrobe_lists[-1] == self.criteria[1]), 
+                                        (wardrobe_lists[5] == self.criteria[0]), 
+                                        (wardrobe_lists[6] == self.criteria[2])), 
                       reverse=True)
         return self.matched_items
     
@@ -208,7 +210,6 @@ class MyCloset:
         print('Top:', clothing_tops[0])
         print('Bottoms:', clothing_bottoms[0])
         print('Shoes:', clothing_shoes[0])
-        #print('THIS IS THE COMPLETE OUTFIT!!!: ', outfit_complete)
         return outfit_complete
         
     
