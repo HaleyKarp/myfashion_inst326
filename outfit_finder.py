@@ -113,8 +113,9 @@ class MyCloset:
                     print("Here are your closet items\n", female)
         
         elif day_answer == 2:
-            colors = self.closet_df.groupby("color")
-            print(colors)
+            colors = input("what is your favorite color?")
+            color_clothes = self.closet_df.groupby("color") == "blue"
+            print(color_clothes)
         
         else:
             print("Let's see what your closet has based on weather:")
@@ -129,27 +130,6 @@ class MyCloset:
                 both = self.closet_df[self.closet_df["weather"] == "both"]
                 print(both)
             
-                    
-                    
-            """
-                if gender == "female":
-                    female_casual = casual[MyCloset.closet_df["gender"] == "female"]
-                    female_bottoms = female_casual[MyCloset.closet_df["category"] == "bottoms"]
-                    bottom_color = input("Would you like the bottoms to be blue, white, or black?")
-                    if bottom_color == "blue":
-                        bottoms_color = female_bottoms[MyCloset.closet_df["color"] == "blue"]
-                        print(f"We reccomend one of these bottoms: \n{bottoms_color}")
-                        
-                    
-                    #female_tops = casual[MyCloset.closet_df["category"] == "tops"]
-                        #print(female_tops)
-                        #tops_color = female_tops[MyCloset.closet_df["color"] != "blue"]
-                        #print(f"The tops we reccomend to pair with it are: \n {tops_color}")
-                        #print(female_casual.loc[1])
-                    #female_tops = female_casual[MyCloset.closet_df["category"] == "tops"]
-                    #female_shoes = female_casual[MyCloset.closet_df["category"] == "shoes"]
-                """
-                
                         
     def get_criteria(self): 
         """Asks the user for criteria which they want to rank their outfits on. They can pick
@@ -252,7 +232,7 @@ class MyCloset:
         #print(matching_set)
                 
     
-    def packing():
+    def packing(self):
         """
         Andy
         If user packs for a trip
@@ -271,13 +251,23 @@ class MyCloset:
             list: outfit list
 
         """
+        pack_weather = input("You have a trip! That is wonderful. What's the weather going to be like? ")
+        if pack_weather == "warm":
+            warm_clothing = self.closet_df[self.closet_df["weather"].str.contains("^w.*") == True]
+            print(warm_clothing)
+        elif pack_weather == "cold":
+            cold_clothing = self.closet_df[self.closet_df["weather"].str.contains("^c.*") == True]
+            print(cold_clothing)
+        
+        days_gone = int(input("How many days will you be gone? "))
+        if days_gone > 0 and days_gone < 3:
+            print("We suggest, two bottoms, two tops, and one shoes")
+        else:
+            print("We suggest 4 bottoms, 3 tops and 2 shoes.")
+        
+        
     def add_clothing(self):
         """
-        concat() 
-        *make new df with users new outfit
-        *concat that new df with closet_df and return as closet_df? 
-        magic methods
-        Jiwon 
         This function will add clothing to the closet
         
         Args: 
@@ -288,7 +278,6 @@ class MyCloset:
         add_clothing material (str): jean, cotton, khaki, spandex
         add_clothing_gender (str): male or female
         add_clothing_weather (str): warm or cold
-    
         """
         add_clothing_name = str(input("write the type of clothing: \n"))
         add_clothing_color = str(input("color?: \n"))
@@ -298,17 +287,14 @@ class MyCloset:
         add_clothing_weather = str(input("weather?: \n"))
         
         new_row = [add_clothing_name, add_clothing_color, add_clothing_length, 
-                    add_clothing_material, add_clothing_gender, add_clothing_weather]
+                   add_clothing_material, add_clothing_gender, add_clothing_weather]
+         
+        with open("fashion_project.csv", 'a', newline="") as f:
+            i = writer(f)
+            i.writerow(new_row)
         
-        with open(self.closet_df, 'a') as f:
-            # Pass this file object to csv.writer() and get a writer object
-            writer_object = writer(f)
-            # Pass the list as an argument into the writerow()
-            writer_object.writerow(new_row)
-            
-            #Close the file object
-            f.close()
-    
+        print(f"your clothing is added succesfully!")
+        
         
     def __str__(self):
         """
@@ -339,7 +325,9 @@ class MyCloset:
             self.rank_choices()
             self.highest_rated()
         elif choice == 4:
-            self.add_clothing(self)
+            self.add_clothing()
+        elif choice == 3:
+            self.packing()
       
 if __name__ == "__main__":
     closet = MyCloset()
