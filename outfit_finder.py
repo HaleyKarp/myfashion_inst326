@@ -114,8 +114,9 @@ class MyCloset:
         
         elif day_answer == 2:
             colors = input("what is your favorite color?")
-            color_clothes = self.closet_df.groupby("color") == "blue"
-            print(color_clothes)
+            if colors == "blue":
+                color_blue = self.closet_df[self.closet_df["color"] == "blue"]
+                print(color_blue)
         
         else:
             print("Let's see what your closet has based on weather:")
