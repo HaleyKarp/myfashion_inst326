@@ -114,8 +114,9 @@ class MyCloset:
         
         elif day_answer == 2:
             colors = input("what is your favorite color?")
-            color_clothes = self.closet_df.groupby("color") == "blue"
-            print(color_clothes)
+            if colors == "blue":
+                color_blue = self.closet_df[self.closet_df["color"] == "blue"]
+                print(color_blue)
         
         else:
             print("Let's see what your closet has based on weather:")
@@ -311,12 +312,15 @@ class MyCloset:
             display the outfits made by the user 
 
         """
-        #make changes
+<<<<<<< HEAD
         with open(my_outfits, r, encoding = "utf-8") as f:
             outfit_finder = []
             for line in f:
                 outfit_finder.append(line)
         return f"This closet has:{outfit_finder}"
+=======
+        return f"This closet has:"
+>>>>>>> 21730d19d2cf6f92756a1949142cfba9fd0162a1
         
         
         
