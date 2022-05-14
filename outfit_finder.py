@@ -296,7 +296,7 @@ class MyCloset:
         print(f"your clothing is added succesfully!")
         
         
-    def __str__(self):
+    def __str__(self, my_outfits):
         """
         Andy and Jay 
         Take what grace has ranked, and send it to a textfile 
@@ -311,7 +311,12 @@ class MyCloset:
             display the outfits made by the user 
 
         """
-        return f"This closet has:"
+        #make changes
+        with open(my_outfits, r, encoding = "utf-8") as f:
+            outfit_finder = []
+            for line in f:
+                outfit_finder.append(line)
+        return f"This closet has:{outfit_finder}"
         
         
         
