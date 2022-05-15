@@ -297,13 +297,8 @@ class MyCloset:
         print(f"your clothing is added succesfully!")
         
         
-    def __str__(self, my_outfits):
+    def __str__(self):
         """
-        Andy and Jay 
-        Take what grace has ranked, and send it to a textfile 
-            This function will display all "outfits" made from the 
-            textfile that the user can output to
-        
         Args:
             my_outfits(textfile): new textfile where the columns chosen will be
             saved to 
@@ -312,15 +307,11 @@ class MyCloset:
             display the outfits made by the user 
 
         """
-<<<<<<< HEAD
-        with open(my_outfits, r, encoding = "utf-8") as f:
+        with open("fashion_project.csv", "r", encoding = "utf-8") as f:
             outfit_finder = []
             for line in f:
                 outfit_finder.append(line)
-        return f"This closet has:{outfit_finder}"
-=======
-        return f"This closet has:"
->>>>>>> 21730d19d2cf6f92756a1949142cfba9fd0162a1
+        print(f"This closet has:{outfit_finder}")
         
         
         
@@ -342,9 +333,10 @@ class MyCloset:
             self.add_clothing()
         elif choice == 3:
             self.packing()
+        else:
+            self.__str__()
       
 if __name__ == "__main__":
     closet = MyCloset()
-    print(closet)
-    #choice = closet.ask_user()
+    
  
