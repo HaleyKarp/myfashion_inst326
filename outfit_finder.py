@@ -266,7 +266,7 @@ class MyCloset:
             print("We suggest 4 bottoms, 3 tops and 2 shoes.")
         
         
-    def add_clothing(self):
+    def add_clothing(self, path):
         """
         This function will add clothing to the closet
         
