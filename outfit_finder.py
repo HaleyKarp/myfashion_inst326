@@ -23,7 +23,6 @@ class MyCloset:
         """
         #self.closet_df = pd.read_csv (self.path)
         #when we submit it we need to not hard code this line
-        #make changes
         self.closet_df = pd.read_csv (path)
         self.criteria = []
         self.matched_items = []
