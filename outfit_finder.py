@@ -299,11 +299,6 @@ class MyCloset:
         
     def __str__(self):
         """
-        Andy and Jay 
-        Take what grace has ranked, and send it to a textfile 
-            This function will display all "outfits" made from the 
-            textfile that the user can output to
-        
         Args:
             my_outfits(textfile): new textfile where the columns chosen will be
             saved to 
@@ -316,7 +311,7 @@ class MyCloset:
             outfit_finder = []
             for line in f:
                 outfit_finder.append(line)
-        return f"This closet has:{outfit_finder}"
+        print(f"This closet has:{outfit_finder}")
         
         
         
@@ -338,9 +333,10 @@ class MyCloset:
             self.add_clothing()
         elif choice == 3:
             self.packing()
+        else:
+            self.__str__()
       
 if __name__ == "__main__":
     closet = MyCloset()
-    print(closet)
-    #choice = closet.ask_user()
+    
  
