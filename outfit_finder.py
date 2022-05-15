@@ -310,7 +310,7 @@ class MyCloset:
             outfit_finder = []
             for line in f:
                 outfit_finder.append(line)
-        print(f"This closet has:{outfit_finder}")
+        return(f"This closet has:{outfit_finder}")
         
         
         
@@ -332,10 +332,37 @@ class MyCloset:
             self.add_clothing()
         elif choice == 3:
             self.packing()
-        else:
-            self.__str__()
-      
+def main(path):
+    closet_df = pd.read_csv (path)
+    closet = MyCloset(path)
+    closet_df = pd.DataFrame((closet_df), 
+                columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
+    print(closet_df) 
+
+def parse_args(arglist):
+    """ Parse command-line arguments.
+    
+    Expect one mandatory argument:
+        - player_name: string representing name of human player
+    
+    Also allow one optional arguments:
+        -c, --computer_name: string representing name of computer player
+    
+    Args:
+        arglist (list of str): arguments from the command line.
+    
+    Returns:
+        namespace: the parsed arguments, as a namespace.
+    """
+    parser = ArgumentParser()
+    parser.add_argument("text_file", help="name of the text file")
+   
+    
+    return parser.parse_args(arglist)
+
 if __name__ == "__main__":
-    closet = MyCloset()
+    args = parse_args(sys.argv[1:])
+    main(args.text_file)       
+    
     
  
