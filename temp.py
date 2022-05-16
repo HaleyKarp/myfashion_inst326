@@ -336,6 +336,8 @@ class MyCloset:
             self.add_clothing()
         elif choice == 3:
             self.packing()
+        else:
+            self._str_() 
       
 
 def main(path):

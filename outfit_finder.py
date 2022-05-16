@@ -334,6 +334,9 @@ class MyCloset:
             self.add_clothing()
         elif choice == 3:
             self.packing()
+        else:
+            self._str_()
+
 def main(path):
     closet_df = pd.read_csv (path)
     closet = MyCloset(path)
