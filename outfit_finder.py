@@ -1,6 +1,6 @@
 # Import writer class from csv module
 from csv import writer
-import pandas as pd
+import pandas as pd 
 
 
 
@@ -23,7 +23,7 @@ class MyCloset:
         """
         #self.closet_df = pd.read_csv (self.path)
         #when we submit it we need to not hard code this line
-        self.closet_df = pd.read_csv (path)
+        self.closet_df = pd.read_csv("fashion_project.csv")
         self.criteria = []
         self.matched_items = []
         #self.ask_user()
@@ -337,37 +337,9 @@ class MyCloset:
         else:
             self._str_()
 
-def main(path):
-    closet_df = pd.read_csv (path)
-    closet = MyCloset(path)
-    closet_df = pd.DataFrame((closet_df), 
-                columns = ["category", "length","type",	"material",	"gender","occasion","weather","color"])
-    print(closet_df) 
-
-def parse_args(arglist):
-    """ Parse command-line arguments.
-    
-    Expect one mandatory argument:
-        - player_name: string representing name of human player
-    
-    Also allow one optional arguments:
-        -c, --computer_name: string representing name of computer player
-    
-    Args:
-        arglist (list of str): arguments from the command line.
-    
-    Returns:
-        namespace: the parsed arguments, as a namespace.
-    """
-    parser = ArgumentParser()
-    parser.add_argument("text_file", help="name of the text file")
-   
-    
-    return parser.parse_args(arglist)
 
 if __name__ == "__main__":
-    args = parse_args(sys.argv[1:])
-    main(args.text_file)       
+    closet = MyCloset()     
     
     
  
