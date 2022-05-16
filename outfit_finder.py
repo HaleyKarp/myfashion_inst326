@@ -312,7 +312,7 @@ class MyCloset:
             outfit_finder = []
             for line in f:
                 outfit_finder.append(line)
-        return(f"This closet has:{outfit_finder}")
+        print(f"This closet has:{outfit_finder}")
         
         
         
@@ -335,7 +335,7 @@ class MyCloset:
         elif choice == 3:
             self.packing()
         else:
-            self._str_()
+            self.__str__()
 
 
 if __name__ == "__main__":
